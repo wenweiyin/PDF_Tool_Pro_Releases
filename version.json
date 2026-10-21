@@ -1,0 +1,6 @@
+{
+  "version": "2.0.1",
+  "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.0.1/PDF_Tool_Pro_Portable_v2.0.1.zip",
+  "notes": "PDF Tool Pro V2.0.1：① 修复多页扫描件提取阻断级缺陷（跨页偏移双基线导致次页数据行静默丢失或整链崩溃）；② 阀门重量经验表不再误改真实数据（蝶阀/闸阀等重型阀的单重/总重不再被静默改写为截止阀典型值，存疑行留痕可查）；③ OCR 零产出显式告警，消灭'提取成功但0条'静默形态；④ 修复600DPI描述补全失效；⑤ 依赖自检改非破坏式（根治半残OpenCV环境）+ 启动导入提速约16倍。"
+}
