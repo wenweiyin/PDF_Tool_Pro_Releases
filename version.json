@@ -1,6 +1,6 @@
 {
-  "version": "2.0.1",
+  "version": "2.1.0",
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
-  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.0.1/PDF_Tool_Pro_Portable_v2.0.1.zip",
-  "notes": "PDF Tool Pro V2.0.1：① 修复多页扫描件提取阻断级缺陷（跨页偏移双基线导致次页数据行静默丢失或整链崩溃）；② 阀门重量经验表不再误改真实数据（蝶阀/闸阀等重型阀的单重/总重不再被静默改写为截止阀典型值，存疑行留痕可查）；③ OCR 零产出显式告警，消灭'提取成功但0条'静默形态；④ 修复600DPI描述补全失效；⑤ 依赖自检改非破坏式（根治半残OpenCV环境）+ 启动导入提速约16倍。"
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.1.0/PDF_Tool_Pro_Portable_v2.1.0.zip",
+  "notes": "PDF Tool Pro V2.1.0：① 新增项目层级管理（🗂项目入口，项目→图纸组织，项目名自动带入云端同步与历史记录，对标 Piping.Tools）；② 焊口框识别旋转不变——等轴测图随管线旋转的焊口框不再漏检（实测参考图识别数 11→20）；③ 焊口台账自动关联管段号 Spool（自动读取图上 <N> 管段标签，焊接日志 S 列自动填充）；④ 修复同步弹窗每次关闭都新建工作区文件导致的文件膨胀。"
 }
