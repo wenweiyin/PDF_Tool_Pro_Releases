@@ -1,6 +1,6 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
-  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.1.0/PDF_Tool_Pro_Portable_v2.1.0.zip",
-  "notes": "PDF Tool Pro V2.1.0：① 新增项目层级管理（🗂项目入口，项目→图纸组织，项目名自动带入云端同步与历史记录，对标 Piping.Tools）；② 焊口框识别旋转不变——等轴测图随管线旋转的焊口框不再漏检（实测参考图识别数 11→20）；③ 焊口台账自动关联管段号 Spool（自动读取图上 <N> 管段标签，焊接日志 S 列自动填充）；④ 修复同步弹窗每次关闭都新建工作区文件导致的文件膨胀。"
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.1.1/PipeEye_Portable_v2.1.1.zip",
+  "notes": "管眸 PipeEye V2.1.1：① 品牌升级——软件更名「管眸 PipeEye」（启动画面/标题栏/激活/关于/协议/更新器全面换标），中文名取'管道的眼睛'之意，契合 AI 识图内核；② 版本号全面从单一来源派生，启动画面/工具栏/关于页不再出现版本号漂移；③ 发布通道修正——Release 一律发到公开分发库 PDF_Tool_Pro_Releases（此前 2.1.0 曾误发私有库）；④ 工作区文件复用覆盖写，不再每次关同步弹窗新建文件。"
 }
