@@ -1,6 +1,6 @@
 {
-  "version": "2.1.1",
+  "version": "2.2.0",
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
-  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.1.1/PipeEye_Portable_v2.1.1.zip",
-  "notes": "管眸 PipeEye V2.1.1：① 品牌升级——软件更名「管眸 PipeEye」（启动画面/标题栏/激活/关于/协议/更新器全面换标），中文名取'管道的眼睛'之意，契合 AI 识图内核；② 版本号全面从单一来源派生，启动画面/工具栏/关于页不再出现版本号漂移；③ 发布通道修正——Release 一律发到公开分发库 PDF_Tool_Pro_Releases（此前 2.1.0 曾误发私有库）；④ 工作区文件复用覆盖写，不再每次关同步弹窗新建文件。"
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.0/PipeEye_Portable_v2.2.0.zip",
+  "notes": "管眸 PipeEye V2.2.0：① 英文 BOM 材料清单全链路打通——此前英文图纸（沙特鲁玛项目）材料清单恒为 0 条，根因是五层叠加（纠错层无条件把字母 O 改成 0、表头关键词精确匹配、is_header_row 只认中文表头、构件关键词表全中文、缺列推断按中文列序插列），现已全部修复，实测 3 个真实扫描件由 0 条恢复到 3/7/6 条；② 横向工程图纸材料表被裁空修复——表格位置改为按版面自适应（position=\"auto\"），横向 A4 图纸的右上角 BOM 不再被裁掉；③ OCR 引擎档位化——内置 PP-OCRv6（默认 v6_small，可选 v6_tiny 轻量档），设置界面新增「识别模型」「识别分辨率」。合成基准集（520 张 GT 精确）实测 v6_small 词级准确率 54.84%→65.27%、CER 37.83%→25.45%；沙特鲁玛真实工程图（**生产同配置对比**：v4 默认 vs v6_small+识别分辨率 3750）词级准确率 47.41%→59.38%（+11.97pp）、纯数字召回 24.02%→53.07%、整页耗时持平（+1.2%）；v6_tiny 比 v4 快 4.6 倍且词准仍高 4.36pp；④ 词库系统 v1→v2——词条支持字段/语言/上下文/禁改四类作用域，官方库与用户库分离（用户积累不再被升级覆盖，可导出分享），新增候选自动生成 + 质量闸门；⑤ 新增 520 张 GT 精确的合成 OCR 基准集与 A/B 台架，词库文件纳入打包并加构建期校验。注：词库自动挖掘出的纠错规则天然「图纸特有」，已在 10 张留出图纸上验证不泛化，此类规则须人工确认后入用户词库，不随官方库分发。"
 }
