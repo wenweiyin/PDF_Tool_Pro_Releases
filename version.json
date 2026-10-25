@@ -1,7 +1,6 @@
 {
-  "version": "2.2.2",
+  "version": "2.2.3",
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
-  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.2/PipeEye_Portable_v2.2.2.zip",
-  "notes": "管眸 PipeEye V2.2.2：修复 v2.2.1 冻结版无法启动的严重缺陷。① 致命缺陷修复——PyMuPDF 升级到 2.0 后，打包配置只收集了兼容层 fitz，漏掉真正的 pymupdf 包及其 layout 版面分析 ONNX 资源（19个模型+3个yaml，共约50MB）；程序启动时读取 layout 资源失败，导致 v2.2.1 双击即报「系统错误：[Errno 2] No such file or directory: pymupdf/layout/resources/onnx/layout_rf2.4.1+imf1.yaml」，完全无法使用。现已补全资源收集。② 新增构建期完整性闸门——打包后自动校验启动期必需资源（PyMuPDF二进制/OCR模型/词库/入口等）并专项检查 layout 的 yaml，缺失即中止打包，杜绝再发坏包；③ 新增 6 项回归测试钉死打包配置，防止第三方库升级时同类问题复发。同时包含 v2.2.1 的全部改进：工作区快照恢复入口、4处队列/同步静默失败修复、入口与凭据守卫、表格线检测修复、云端密码 DPAPI 加密、打包体积 416MB→289MB。注意：包体积因补入 layout 资源增至约 217MB（原 175MB）。",
-  "revocation_url": "https://api.github.com/repos/wenweiyin/PDF_Tool_Pro_Releases/contents/revocation.list?ref=main"
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.3/PipeEye_Portable_v2.2.3.zip",
+  "notes": "管眸 PipeEye V2.2.3：品牌视觉与授权体系重大更新。① 全新品牌图标——程序化生成的工业管道法兰图标（法兰臂 + 8螺栓法兰盘 + 刻度环 + 十字准星 + 发光瞳孔），7种尺寸（16~256px），已应用到主程序与授权控制台的标题栏和任务栏，16px 小尺寸下仍清晰可辨。② HUD 风格启动动画——管道剖面实时绘制（内外壁 + 焊口标记 + 数据流光点 + 流向箭头 + 扫描线 + 收缩准星环 + 边角HUD框），60fps 纯 Canvas 绘制、无图片依赖，按进度切换「OCR引擎 → 规则引擎 → 词库模型 → 工作区 → 就绪」状态文案。③ 授权吊销真实生效（此前形同虚设）——修复三处：吊销检查原先使用硬编码 URL 而完全忽略配置（等于从不联网）、远程清单走 raw.githubusercontent CDN 会返回数分钟前的过期内容、吊销清单未落在客户端可读路径；现改为走 GitHub Contents API 实时读取，缓存 TTL 24小时 → 1小时，并新增 publish_revocation_to_distribution() 自动发布吊销清单到发行仓库。已端到端实测：发布机器码后，全新零文件客户端被正确拒绝并提示「许可证已被吊销」。④ 激活码有效期修复（此前被客户端忽略）——控制台签发的有效期天数原先只存本地数据库，客户端 activate() 硬编码 365 天，导致签发 30 天码实际仍是 365 天；现有效期编码进激活码 D{days} 段（无该段 = 365天旧码兼容、D0 = 永久、DN = N天），激活后到期日按码内天数计算。⑤ 通用激活码修复——无机器码 + 有客户名的通用码原先因段位解析错位（把客户名当机器码比对）永远提示「与当前机器不匹配」，现用统一段位解析器 _split_activation_segments() 正确处理。⑥ 授权控制台全面改版——更名为「管眸 PipeEye — 授权管理控制台」，1600x920 双栏布局，签发历史改用 ttk.Treeview 真列对齐（此前 f-string 补空格在中文双宽字符与超长激活码下必然错位），支持点击表头排序、双击复制激活码，吊销操作区按两行排布不再挤成一团。⑦ 构建期自签名——解决 Windows Smart App Control 拦截新编译 exe（WinError 4551），实测签完立即可启动。⑧ 新增 28 项授权控制台测试 + 6 项打包完整性测试，钉死上述修复防止复发。"
 }
