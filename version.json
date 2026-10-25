@@ -3,5 +3,5 @@
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
   "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.2/PipeEye_Portable_v2.2.2.zip",
   "notes": "管眸 PipeEye V2.2.2：修复 v2.2.1 冻结版无法启动的严重缺陷。① 致命缺陷修复——PyMuPDF 升级到 2.0 后，打包配置只收集了兼容层 fitz，漏掉真正的 pymupdf 包及其 layout 版面分析 ONNX 资源（19个模型+3个yaml，共约50MB）；程序启动时读取 layout 资源失败，导致 v2.2.1 双击即报「系统错误：[Errno 2] No such file or directory: pymupdf/layout/resources/onnx/layout_rf2.4.1+imf1.yaml」，完全无法使用。现已补全资源收集。② 新增构建期完整性闸门——打包后自动校验启动期必需资源（PyMuPDF二进制/OCR模型/词库/入口等）并专项检查 layout 的 yaml，缺失即中止打包，杜绝再发坏包；③ 新增 6 项回归测试钉死打包配置，防止第三方库升级时同类问题复发。同时包含 v2.2.1 的全部改进：工作区快照恢复入口、4处队列/同步静默失败修复、入口与凭据守卫、表格线检测修复、云端密码 DPAPI 加密、打包体积 416MB→289MB。注意：包体积因补入 layout 资源增至约 217MB（原 175MB）。",
-  "revocation_url": "https://raw.githubusercontent.com/wenweiyin/PDF_Tool_Pro_Releases/main/revocation.list"
+  "revocation_url": "https://api.github.com/repos/wenweiyin/PDF_Tool_Pro_Releases/contents/revocation.list?ref=main"
 }
