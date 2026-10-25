@@ -1,6 +1,6 @@
 {
-  "version": "2.2.1",
+  "version": "2.2.2",
   "download_url": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/latest",
-  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.1/PipeEye_Portable_v2.2.1.zip",
-  "notes": "管眸 PipeEye V2.2.1：质量巩固版，无新功能、修隐患。① 表格线检测修复——HoughLinesP 返回形状随 OpenCV 版本而变，原代码写死解包方式致该功能静默失效（列边界恒空、行分组增强从不生效，无任何报错），已兼容两种形状；② 工作区快照恢复入口——\"打开快照\"按钮自 V2.0 起遗漏，快照只能写不能读，现补上（历史快照均可恢复）；③ 云端密码 DPAPI 加密——同步密码不再明文落盘（绑定本机 Windows 用户，配置文件被拷走也无法解密），存量明文首次加载时自动迁移；④ 删除 PP-Structure 死代码链——识别结果从未进入产物管线，-86 行；⑤ Sauvola 二值化性能——原实现逐像素双重循环（分钟级）改积分图向量化，输出逐位一致；⑥ 4 处静默失败修复——自动登录/自动推送的异常不再无声吞掉，队列消息契约破坏不再绕过并发守卫；⑦ 入口与凭据守卫——main.py 转发 V2、data/ 防入库各有回归测试钉死；⑧ 打包体积 416MB→289MB（-30.5%）——Sauvola 改写为纯 numpy 后 OpenCV 整体出包，下载更快、安装包同步瘦身。另：测试套件 503 全过（修复 3 个过期测试，三年基线清零）。"
+  "download_asset": "https://github.com/wenweiyin/PDF_Tool_Pro_Releases/releases/download/v2.2.2/PipeEye_Portable_v2.2.2.zip",
+  "notes": "管眸 PipeEye V2.2.2：修复 v2.2.1 冻结版无法启动的严重缺陷。① 致命缺陷修复——PyMuPDF 升级到 2.0 后，打包配置只收集了兼容层 fitz，漏掉真正的 pymupdf 包及其 layout 版面分析 ONNX 资源（19个模型+3个yaml，共约50MB）；程序启动时读取 layout 资源失败，导致 v2.2.1 双击即报「系统错误：[Errno 2] No such file or directory: pymupdf/layout/resources/onnx/layout_rf2.4.1+imf1.yaml」，完全无法使用。现已补全资源收集。② 新增构建期完整性闸门——打包后自动校验启动期必需资源（PyMuPDF二进制/OCR模型/词库/入口等）并专项检查 layout 的 yaml，缺失即中止打包，杜绝再发坏包；③ 新增 6 项回归测试钉死打包配置，防止第三方库升级时同类问题复发。同时包含 v2.2.1 的全部改进：工作区快照恢复入口、4处队列/同步静默失败修复、入口与凭据守卫、表格线检测修复、云端密码 DPAPI 加密、打包体积 416MB→289MB。注意：包体积因补入 layout 资源增至约 217MB（原 175MB）。"
 }
